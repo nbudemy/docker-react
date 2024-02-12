@@ -4,4 +4,4 @@ services:
 before_install:
   - docker build -t udemy-react-app -f Dockerfile.dev .
 script:
-  - docker run udemy-react-app npm run test -- coverage
+  - docker run -e CI=true udemy-react-app npm run test
