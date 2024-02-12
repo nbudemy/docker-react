@@ -1,0 +1,7 @@
+sudo: required #Need for Docker
+services:
+  - docker
+before_install:
+  - docker build -t nbnodejs/react-app -f Dockerfile.dev .
+script:
+  - docker run -e CI=true nbnodejs/reactapp npm run test
